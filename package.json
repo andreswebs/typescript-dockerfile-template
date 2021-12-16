@@ -1,7 +1,7 @@
 {
-  "name": "whatsapp-test",
+  "name": "typescript-dockerfile-example",
   "version": "0.0.1",
-  "description": "Test Whatsapp",
+  "description": "Do your thing",
   "main": "dist/app.js",
   "private": true,
   "engines": {
