@@ -1,5 +1,5 @@
 .serverless
 .aws-sam
-.git
+.git*
+.env*
 node_modules
-.env
