@@ -1,4 +1,4 @@
-# typescript-dockerfile-example
+# typescript-dockerfile-template
 
 Example Dockerfile for a TypeScript application.
 
