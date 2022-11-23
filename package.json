@@ -3,29 +3,33 @@
   "version": "0.0.1",
   "description": "Do your thing",
   "main": "dist/app.js",
+  "types": "dist/app.d.ts",
+  "files": [
+    "dist"
+  ],
   "private": true,
   "engines": {
     "node": ">=14.15.0"
   },
   "scripts": {
     "local:ts": "npx ts-node src/app.ts",
-    "build": "rimraf ./dist && tsc",
-    "watch": "tsc -w",
-    "lint": "eslint . --ext .js,.ts",
-    "lint:fix": "eslint . --ext .js,.ts --fix"
+    "build": "npx rimraf ./dist && npx tsc",
+    "watch": "npx tsc -w",
+    "lint": "npx eslint . --ext .js,.ts",
+    "lint:fix": "npx eslint . --ext .js,.ts --fix"
   },
   "license": "Unlicense",
   "devDependencies": {
-    "@types/node": "^17.0.19",
-    "@typescript-eslint/eslint-plugin": "^5.12.0",
-    "@typescript-eslint/parser": "^5.12.0",
-    "eslint": "^8.9.0",
-    "eslint-config-prettier": "^8.4.0",
-    "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.5.1",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.5.5"
+    "typescript": "^4.8.4"
   }
 }

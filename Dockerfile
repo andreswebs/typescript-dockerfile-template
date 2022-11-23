@@ -1,13 +1,12 @@
 # Dependencies
-FROM node:16-bullseye-slim AS deps
+FROM node:18-bullseye-slim AS deps
 WORKDIR /app
 ENV NODE_ENV=production
 COPY package.json package-lock.json /app/
-RUN \
-  npm ci --only=production
+RUN npm ci
 
 # Build
-FROM node:16-bullseye-slim AS build
+FROM node:18-bullseye-slim AS build
 WORKDIR /app
 COPY package.json package-lock.json tsconfig.json /app/
 COPY ./src /app/src
@@ -16,9 +15,10 @@ RUN \
   npm run build
 
 # Release
-FROM node:16-bullseye-slim AS release
-WORKDIR /app
+FROM node:18-bullseye-slim AS release
+WORKDIR /home/node/app
+RUN chown -R node:node /home/node/app
 ENV NODE_ENV=production
-COPY --from=deps /app/node_modules /app
-COPY --from=build /app/dist/ /app
+COPY --from=deps --chown=node:node /app/node_modules /home/node/app
+COPY --from=build --chown=node:node /app/dist/ /home/node/app
 CMD ["node", "app.js"]
