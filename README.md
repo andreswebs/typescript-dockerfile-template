@@ -1,6 +1,6 @@
 # typescript-dockerfile-template
 
-Example Dockerfile for a TypeScript application.
+Example TypeScript application in Docker.
 
 
 ## Authors
